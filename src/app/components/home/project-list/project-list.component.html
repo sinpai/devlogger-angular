@@ -1,0 +1,13 @@
+<ul class="list-group mt-5">
+  <li class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let project of projects"
+      (click)="onSelect(project)"
+      [ngClass] = "{'list-group-item-secondary': selectedObsProject === project}"
+  >
+    <div class="align-items-center d-flex w-100">
+      <a href="" routerLink="/project/{{ project.projectId }}">{{ project.name }}</a>
+      <span class="badge badge-primary badge-pill ml-2 mr-auto">{{ project.logs.length }}</span>
+      <i class="fa fa-remove ml-auto" (click)="deleteProject(project)"> </i>
+    </div>
+  </li>
+</ul>
